@@ -38,6 +38,6 @@ app.post("/", function (req, res) {
   } else res.sendFile(__dirname + "/failure.html")
 })
 
-app.listen(port, () => {
-  console.log(`App rollin at port:${port}`)
+app.listen(process.env.PORT || 3000, function () {
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env)
 })
